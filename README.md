@@ -1,99 +1,37 @@
-# PANDORA
+# Pandora — Security Review Required
 
-<p align="center">
-<img src="https://img.shields.io/badge/build-MrSanZz-badge?style=flat-square&logo=bitcoin&logoColor=yellow&label=Author&labelColor=grey&color=yellow"><br>
-<img width="225" height="225" src="https://bnhsec.000webhostapp.com/a/ublpyf.jpg"><br>Donate Me :).. (Payment : Dana)<br><br>
-<img src="https://th.bing.com/th/id/OIP.dcdTLANDPGPrcgbXBnBWjAHaEK?rs=1&pid=ImgDetMain" style="height: 5%; width: 55%;"><br>
-<img src="https://kosred.com/a/pvwnwx.png" style="height: 30%; width: 30%;"><br>
-</center>
-<span>Recoding/Modifying this code is allowed</span><br>
-</p>
+This repository contains legacy Python code that advertises a mixture of security-related features, including denial-of-service, exploitation, unauthorized data access, surveillance, doxxing, and malware creation. It has **not** been audited for safe execution.
 
-#Feature
-<details open>
-    <center>
--= Has features =-<br><br>
+## Status
 
-===============<br><br>
--DDoS<br>
--Web Scanning<br>
--Phone Hunter<br>
--CCTV Hunter<br>
--Deface<br>
--Mass Deface<br>
--Deface Maker<br>
--Bypass Maker<br>
--Auto Bypasser<br>
--Database Dump<br>
--Dorking<br>
--Admin Finder<br>
--Wifi Jammer<br>
--Executor<br>
--Simple Dirber<br>
--Trojan Maker<br>
--Mass Dork<br>
--Doxing / Osint <br>
--Network Sniffing / Monitor<br>
--Ransomware Maker<br>
--DDOS Layer 4 - 7<br>
--AutoXploit<br>
--WormGPT<br>
--Encrypter<br>
--API GPT Cracker<br>
--SQL Injection<br>
--Shell Finder<br><br>
-===============<br>
-</center>
-</details>
+- **Not production-ready.**
+- **Do not run the legacy `pandora.py` entry point against public or third-party systems.**
+- The former `setup.py` ran shell and system package-manager commands automatically. That installer has been disabled in this branch; it now exits without installing packages or executing system commands.
+- No claim is made that the rest of the legacy code is safe.
 
-# Install Steps
-<details open>
-    <summary><strong>How To Install:</strong></summary>
+## Safe contribution scope
 
-```bash
-    Linux Mint:
+This project should be improved as a defensive security learning and maintenance project. Appropriate work includes:
 
-    0. apt update && apt upgrade
-    1. apt install wget
-    2. apt install curl
-    3. apt install figlet
-    4. apt install git
-    5. apt install python3-pip
-    6. apt install python2 && apt install python3
-    7. git clone https://github.com/MrSanZz/pandora
-    8. cd pandora
-    9. pip3 install -r requirements.txt
-    10. python3 pandora.py
-    11. If the tool has an error in the module, try typing python3 setup.py
+- Removing unsafe implicit command execution and dangerous defaults.
+- Dependency inventory, vulnerability review, and reproducible isolated environments.
+- Unit tests for pure functions and static safety checks.
+- Passive analysis of user-provided files and local configuration.
+- Clear documentation of authorization, scope, privacy, and data handling.
+- Cross-platform compatibility and maintainability improvements that do not enable offensive capabilities.
 
-    Linux:
+This branch intentionally does not add, fix, or optimize DDoS, exploitation, credential theft, unauthorized scanning, surveillance, doxxing, or malware functionality.
 
-    0. apt update && apt upgrade
-    1. apt install figlet
-    2. apt install curl
-    3. apt install wget
-    4. apt install python3-pip
-    5. apt install python3
-    6. apt install git
-    7. git clone https://github.com/MrSanZz/pandora
-    8. cd pandora
-    9. pip3 install -r requirements.txt
-    10. python3 pandora.py
-    11. If the tool has an error in the module, try typing python3 setup.py
+## Safe handling
 
-    Termux:
+1. Review source files before executing anything.
+2. Use an isolated disposable virtual machine with no production or third-party network access.
+3. Never use real credentials, secrets, or personal/customer data in test fixtures.
+4. Do not run legacy scripts with root/Administrator privileges.
+5. Treat all dependencies and downloaded artifacts as untrusted until reviewed.
 
-    1. apt update && apt upgrade && pkg update && pkg upgrade
-    2. pkg install curl
-    3. pkg install wget
-    4. pkg install python3
-    5. pkg install git
-    6. pkg install figlet
-    7. git clone https://github.com/MrSanZz/pandora
-    8. cd pandora
-    9. pip3 install -r requirements.txt
-    10. python3 pandora.py
-    11. If the tool has an error in the module, try typing python3 setup.py
-```
-<span>Thanks For : JogjaXploit</span>
+See [SECURITY.md](SECURITY.md) for the security policy and reporting guidance.
 
+## Current verification limits
+
+The installer change is a narrow safety measure, not a complete security audit. The legacy entry point and its dependencies have not been executed or validated. Any future release should require automated tests, dependency checks, and a documented review of the remaining entry points before it can be considered safe.

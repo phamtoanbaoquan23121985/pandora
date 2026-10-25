@@ -1,26 +1,26 @@
-print("")
+"""Safe maintenance placeholder for the legacy Pandora repository.
 
-import os
-os.system('pip3 install google')
-os.system('pip3 install colorama')
-os.system('apt install wget')
-os.system('pip3 install wget')
-os.system('pip3 install requests')
-os.system('pip3 install sockets')
-os.system('pip3 install pythonping')
-os.system('pip3 install os-sys')
-os.system('pip3 install times')
-os.system('pip3 install sys')
-os.system('pip3 install ipaddress')
-os.system('pip3 install pyexiftool')
-os.system('pip3 install beautifulsoup4')
-os.system('pip3 install phonenumbers')
-os.system('pip3 install faker')
-os.system('pip3 install urllib3')
-os.system('pip3 install regex')
-os.system('pip3 install argparse')
-os.system('pip3 install random2')
-os.system('pip3 install openai')
-os.system('pip3 install importlib')
-os.system('pip3 install scapy')
-os.system('pip3 install cloudscraper')
+The previous setup.py executed a long list of shell commands, including
+system package-manager operations, at import/run time. That behavior is
+unsafe and is intentionally not reproduced here.
+
+This repository's legacy entry point advertises offensive capabilities and
+has not been audited for safe execution. Do not use this file to install
+packages or launch the application. For defensive work, create an isolated
+virtual environment and review dependencies and source code manually first.
+"""
+
+def main() -> int:
+    print(
+        "Automatic installation is disabled: the legacy Pandora codebase "
+        "requires a security review before it can be run."
+    )
+    print(
+        "No commands were executed and no packages were installed. "
+        "See SECURITY.md for safe-use guidance."
+    )
+    return 2
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
